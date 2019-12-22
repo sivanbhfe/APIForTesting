@@ -165,7 +165,7 @@ public class OrderController {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, path = "/order", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<SaveOrderResponse> saveOrder(
-            final SaveOrderRequest saveOrderRequest,
+            @RequestBody final SaveOrderRequest saveOrderRequest,
             @RequestHeader("authorization") final String authorization)
             throws AuthorizationFailedException, CouponNotFoundException,
             AddressNotFoundException, PaymentMethodNotFoundException,
